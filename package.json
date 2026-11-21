@@ -1,0 +1,5 @@
+{
+  "name": "demo-baptiste",
+  "private": true,
+  "scripts": {"dev": "python3 server.py"}
+}

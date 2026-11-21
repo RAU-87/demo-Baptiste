@@ -1,7 +1,18 @@
 # Démo Baptiste — suivi des cadeaux de Noël
 
-## État du projet
-Cadrage initial du 21 novembre 2026. Aucune application, collecte réelle ou infrastructure n'est encore déployée. Les choix techniques ci-dessous sont proposés, pas encore implémentés.
+## Version locale
+
+Cette version suit les fiches produit publiques de Fnac et LEGO France. Ajoute un cadeau, colle un lien par ligne pour le même modèle et indique éventuellement un budget. Le premier relevé se lance à l’enregistrement. Les collectes se font à 8 h, 14 h et 20 h (Europe/Paris) quand le serveur tourne, même si le navigateur est fermé. Le bouton **Vérifier les prix** lance un relevé à la demande.
+
+    python3 server.py
+
+Ouvrir [localhost:3000](http://localhost:3000). Python 3.10 ou plus récent suffit. Les données restent dans le fichier local data/cadeaux.json, ignoré par Git. Cette première version utilise Python et une interface web sans dépendances pour faciliter le lancement local.
+
+Fnac fournit l’offre principale de la fiche, parfois proposée par un vendeur partenaire. Le port standard LEGO pour la France est estimé sur un article. Le classement utilise les offres en stock dont le total est complet. Le vendeur confirme les frais effectifs et les délais de livraison.
+
+## Cadrage de la version hébergée
+
+Les sections suivantes décrivent les fonctionnalités et choix techniques envisagés pour la suite.
 
 ## Objectif
 Créer un site privé permettant de définir des cadeaux pour les enfants et de comparer automatiquement les offres de marchands prédéfinis, trois fois par jour. Afficher la meilleure offre **parmi les sources interrogées**, avec sa date de vérification et les limites de la comparaison.
